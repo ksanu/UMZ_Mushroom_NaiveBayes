@@ -77,15 +77,9 @@ y_out = np.where(y_out_predicted == 1, 'e', 'p')
 
 score = accuracy_score(y_test, y_out)
 print(score)
-"""
-X_test_in = pandas.read_csv('test-A/in.tsv', sep='\t', header=None, usecols=[0, 1, 3, 8]).fillna(-1)
 
-reg = LogisticRegression().fit(X_train, y_train)
-
-y_out = reg.predict(X_test_in)
-
-with open('test-A/out.tsv', 'w') as output_file:
+with open('dev-0/out.tsv', 'w') as output_file:
     for out in y_out:
-        print('%.0f' % out, file=output_file)
+        print('%s' % out, file=output_file)
 
-"""
+
